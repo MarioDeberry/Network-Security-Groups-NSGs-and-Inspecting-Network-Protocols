@@ -27,10 +27,10 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 ### 1. Setting Up Virtual Machines and Installing Wireshark
 <p>
-  <img src="https://github.com/chrisrraP/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/VM2%20Private%20IP.png" height="80%" width="80%" alt="VM Private IP"/>
+  <img src="https://github.com/MarioDeberry/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/VM2%20Private%20IP.png" height="80%" width="80%" alt="VM Private IP"/>
 </p>
 <p>
-  <img src="https://github.com/chrisrraP/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/Ping%20VM2.png" />
+  <img src="https://github.com/MarioDeberry/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/Ping%20VM2.png" />
 </p>
 Set up two virtual machines in Microsoft Azure. Reference https://github.com/MarioDeberry/Configuring-Active-Directory-within-Azure-VMs to learn how to create virtual machines. 
 VM1 will use Windows 10 OS and VM2 will use Ubuntu.  
@@ -40,13 +40,13 @@ In Wireshark, select "Ethernet" and type ICMP in the search bar to capture traff
 
 ### 2. Applying Network Security Groups (NSG) Rules
 <p>
-  <img src="https://github.com/chrisrraP/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/Network%20Security%20Groups.png" height="80%" width="80%" alt="Network Security Group"/>
+  <img src="https://github.com/MarioDeberry/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/Network%20Security%20Groups.png" height="80%" width="80%" alt="Network Security Group"/>
 </p>
 <p>
-  <img src="https://github.com/chrisrraP/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/VM2%20Inbound%20Security.png" height="80%" width="80%" alt="Inbound Security"/>
+  <img src="https://github.com/MarioDeberry/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/VM2%20Inbound%20Security.png" height="80%" width="80%" alt="Inbound Security"/>
 </p>
 <p>
-  <img src="https://github.com/chrisrraP/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/Ping%20to%20VM2%20Timed%20Out.png" height="80%" width="80%" alt="Ping Timeout"/>
+  <img src="https://github.com/MarioDeberry/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/Ping%20to%20VM2%20Timed%20Out.png" height="80%" width="80%" alt="Ping Timeout"/>
 </p>
 In the Azure portal, search for Network Security Group and select it.  
 You might see two network groups created for VM2. Apply changes to both groups.  
@@ -58,7 +58,7 @@ Edit the rule back to Allow in Azure and observe that the requests are received 
 
 ### 3. Observing SSH Traffic
 <p>
-  <img src="https://github.com/chrisrraP/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/SSH%20Traffic.png" height="80%" width="80%" alt="SSH Traffic"/>
+  <img src="https://github.com/MarioDeberry/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/SSH%20Traffic.png" height="80%" width="80%" alt="SSH Traffic"/>
 </p>
 Stop the Wireshark capture.  
 Type ssh in the search bar and press enter.  
@@ -69,10 +69,10 @@ After observing, type exit in Powershell to return to VM1.
 
 ### 4. Inspecting DHCP Traffic
 <p>
-  <img src="https://github.com/chrisrraP/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/DHCP%20Traffic.png" height="80%" width="80%" alt="DHCP Traffic"/>
+  <img src="https://github.com/MarioDeberry/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/DHCP%20Traffic.png" height="80%" width="80%" alt="DHCP Traffic"/>
 </p>
 <p>
-  <img src="https://github.com/chrisrraP/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/DHCP%20Renew%20Traffic.png" height="80%" width="80%" alt="DHCP Renew Traffic"/>
+  <img src="https://github.com/MarioDeberry/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/DHCP%20Renew%20Traffic.png" height="80%" width="80%" alt="DHCP Renew Traffic"/>
 </p>
 In Wireshark, filter the traffic by typing DHCP in the search bar.  
 Continue without saving the current capture.  
@@ -80,7 +80,7 @@ Use the nslookup command in Powershell followed by a website name (e.g., `nslook
 
 ### 5. Monitoring Remote Desktop Protocol (RDP) Traffic
 <p>
-  <img src="https://github.com/chrisrraP/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/Desktop%20Traffic.png" height="80%" width="80%" alt="RDP Traffic"/>
+  <img src="https://github.com/MarioDeberry/Network-Security-Groups-NSGs-and-Inspecting-Network-Protocols/blob/main/Desktop%20Traffic.png" height="80%" width="80%" alt="RDP Traffic"/>
 </p>
 To monitor RDP traffic, type tcp.port==3389 into the Wireshark search bar.  
 This will display the real-time traffic occurring between VM1 and VM2 via RDP.
